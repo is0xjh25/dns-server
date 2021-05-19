@@ -1,7 +1,5 @@
 phase1
 dns_svr
 *.o
-*.pdf
 *.html
-*.docx
 *.viscode
