@@ -7,7 +7,7 @@
 •	Forwarded the client's inquiry to upper DNS server and replied with correct IP address\
 •	Constructed caching feature and multi-threads functionality by pthread
 
-## Requirement
+## Task & Requirements
 
 ### 1.Standard Option
 Accept a DNS “AAAA” query over TCP on port 8053. Forward it to a server whose IPv4 address is the first command-line argument and whose port is the second command-line argument. (For testing, use the value in /etc/resolv.conf on your server and port 53). Send the response back to the client who sent the request, over the same TCP connection. There will be a separate TCP connection for each query/response with the client. Log these events, as described below.
