@@ -1,5 +1,4 @@
-# dns-server
-DNS Server (C Language):
+#DNS Server (C Language):
 
 # Summary
 •	Understood DNS packet (via Wireshark)\
@@ -27,7 +26,6 @@ If a new answer is received when the cache contains an expired entry, the expire
 \
 Do not cache responses that do not contain answers (i.e., the address was not found). If multiple answers are returned, only cache the first one.
 If you implementing caching, include the line “#define CACHE” in your code. Otherwise, this functionality will not be tested/marked.
-\
 
 ## Non-blocking Option
 It can sometimes take a while for the server that was queried to give a response. To perform a recursive DNS lookup, many servers may need to be contacted (when starting from an empty cache, from a root DNS server down to an authoritative DNS server); any of them may be congested. Meanwhile, another request may have arrived, which the server cannot respond to if it was blocked by the completion of the first request.
