@@ -1,4 +1,4 @@
-#DNS Server (C Language):
+# DNS Server (C Language):
 
 # Summary
 •	Understood DNS packet (via Wireshark)\
