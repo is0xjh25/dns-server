@@ -1,7 +1,7 @@
 # dns-server
 DNS Server (C Language):
 
-## Summary
+# Summary
 •	Understood DNS packet (via Wireshark)\
 •	Practiced the socket connection\
 •	Created an analyzer for the incoming requests.\
@@ -15,7 +15,7 @@ Accept a DNS “AAAA” query over TCP on port 8053. Forward it to a server whos
 Note that DNS usually uses UDP, but this project will use TCP because it is a more useful skill for you to learn. A DNS message over TCP is slightly different from that over UDP: it has a two-byte header that specify the length (in bytes) of the message, not including the two-byte header itself [4, 5]. This means that you know the size of the message before you read it, and can malloc() enough space for it.\
 \
 Assume that there is only one question in the DNS request you receive, although the standard allows there to be more than one. If there is more than one answer in the reply, then only log the first one, but always reply to the client with the entire list of answers. If there is no answer in the reply, log the request line only. If the first answer in the response is not a AAAA field, then do not print a log entry (for any answer in the response).
-The program should be ready to accept another query as soon as it has processed the previous query and response. (If Non-blocking option is implemented, it must be ready before this too.)
+The program should be ready to accept another query as soon as it has processed the previous query and response.
 
 ## Cache Option
 As above, but cache the five (5) most recent answers to queries. Answer directly if possible, instead of querying the server again.
@@ -33,9 +33,6 @@ If you implementing caching, include the line “#define CACHE” in your code. 
 It can sometimes take a while for the server that was queried to give a response. To perform a recursive DNS lookup, many servers may need to be contacted (when starting from an empty cache, from a root DNS server down to an authoritative DNS server); any of them may be congested. Meanwhile, another request may have arrived, which the server cannot respond to if it was blocked by the completion of the first request.
 This option extends both options above and mitigates this problem, by enabling the processing of new requests while waiting for prior requests to complete.
 This may be done using multi-threading, or select(3)/epoll(7). Using multithreading may require explicit locking of shared resources, such as the cache, whereas a single threaded implementation using select() will not require that. However, using select() may require significant refactoring if it is not considered in the initial code design.
-\
-If you choose this option, you are expected to read further about multi-threading and/or select() on your own (extending from week 3 and 10 practicals). This is training for what computer professionals are expected to do.
-\
 
 ***
 More details in project specification!!!
