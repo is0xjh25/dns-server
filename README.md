@@ -1,5 +1,5 @@
 # dns-server
-DNS Server (C Language):\
+DNS Server (C Language):
 
 ## Summary
 •	Understood DNS packet (via Wireshark)\
@@ -7,6 +7,8 @@ DNS Server (C Language):\
 •	Created an analyzer for the incoming requests.\
 •	Forwarded the client's inquiry to upper DNS server and replied with correct IP address\
 •	Constructed caching feature and multi-threads functionality by pthread\
+
+# Description
 
 ## Standard Option
 Accept a DNS “AAAA” query over TCP on port 8053. Forward it to a server whose IPv4 address is the first command-line argument and whose port is the second command-line argument. (For testing, use the value in /etc/resolv.conf on your server and port 53). Send the response back to the client who sent the request, over the same TCP connection. There will be a separate TCP connection for each query/response with the client. Log these events, as described below.
@@ -31,7 +33,9 @@ If you implementing caching, include the line “#define CACHE” in your code. 
 It can sometimes take a while for the server that was queried to give a response. To perform a recursive DNS lookup, many servers may need to be contacted (when starting from an empty cache, from a root DNS server down to an authoritative DNS server); any of them may be congested. Meanwhile, another request may have arrived, which the server cannot respond to if it was blocked by the completion of the first request.
 This option extends both options above and mitigates this problem, by enabling the processing of new requests while waiting for prior requests to complete.
 This may be done using multi-threading, or select(3)/epoll(7). Using multithreading may require explicit locking of shared resources, such as the cache, whereas a single threaded implementation using select() will not require that. However, using select() may require significant refactoring if it is not considered in the initial code design.
+\
 If you choose this option, you are expected to read further about multi-threading and/or select() on your own (extending from week 3 and 10 practicals). This is training for what computer professionals are expected to do.
-Please use only a single process; do not use fork() or other means to create additional processes.
-Remember that this is an advanced option; you are able to get 90% without doing it. Your time is probably better spent ensuring you did well on the other parts. However, if you are realistically aiming for 15/15, then this option is for you.
-If you implement non-blocking, include the line “#define NONBLOCKING” in your code. Otherwise, this functionality will not be tested/marked.
+\
+
+***
+More details in project specification!!!
