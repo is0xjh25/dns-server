@@ -33,4 +33,4 @@ This option extends both options above and mitigates this problem, by enabling t
 This may be done using multi-threading, or select(3)/epoll(7). Using multithreading may require explicit locking of shared resources, such as the cache, whereas a single threaded implementation using select() will not require that. However, using select() may require significant refactoring if it is not considered in the initial code design.
 
 ***
-More details in project specification!!!
+*More details in project specification!
