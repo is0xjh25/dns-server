@@ -5,7 +5,7 @@
 •	Practiced the socket connection\
 •	Created an analyzer for the incoming requests.\
 •	Forwarded the client's inquiry to upper DNS server and replied with correct IP address\
-•	Constructed caching feature and multi-threads functionality by pthread\
+•	Constructed caching feature and multi-threads functionality by pthread
 
 # Description
 
