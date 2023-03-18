@@ -34,7 +34,7 @@ This may be done using multi-threading, or select(3)/epoll(7). Using multithread
 
 ***
 ### Command Line
-make clean && make -B && ./dns_svr <server-ip> <server-port>
+`make clean && make -B && ./dns_svr <server-ip> <server-port>`
   
 ### Example Output
 #### _appears in log file_
