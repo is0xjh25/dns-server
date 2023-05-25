@@ -40,4 +40,4 @@ This may be done using multi-threading, or select(3)/epoll(7). Using multithread
 #### _appears in log file_
 
 ***
-*_more details in [project specification](https://github.com/is0xjh25/dns-server/blob/main/project2.pdf)_
+*_more details in [project specification](https://github.com/is0xjh25/dns-server/blob/main/project2.pdf)._
